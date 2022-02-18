@@ -52,9 +52,11 @@ internal struct Assets {
 		let font = UIFont.monospacedDigitSystemFont(ofSize: size, weight: .regular)
 		let fontDescriptor = font.fontDescriptor.addingAttributes([
 			.featureSettings: [
-					UIFontDescriptor.FeatureKey.selector: kStylisticAltSixOnSelector,
-					UIFontDescriptor.FeatureKey.type: kStylisticAlternativesType
-			]
+				[
+					.featureIdentifier: kStylisticAlternativesType,
+					.typeIdentifier: kStylisticAltSixOnSelector
+				]
+			] as [[UIFontDescriptor.FeatureKey: Int]]
 		])
 		return UIFont(descriptor: fontDescriptor, size: 0)
 	}
