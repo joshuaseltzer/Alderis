@@ -1,10 +1,7 @@
-ifeq ($(BUILD_LEGACY_ARM64E),1)
-	export TARGET = iphone:13.7:12.0
-else
-	export TARGET = iphone:latest:12.0
-endif
+ARCHS = arm64 arm64e
+TARGET = iphone:14.5:12.0
 
-FRAMEWORK_OUTPUT_DIR = $(THEOS_OBJ_DIR)/xcode_derived/install/Library/Frameworks
+FRAMEWORK_OUTPUT_DIR = $(THEOS_OBJ_DIR)/install/Library/Frameworks
 
 export ADDITIONAL_CFLAGS = -fobjc-arc -Wextra -Wno-unused-parameter -F$(FRAMEWORK_OUTPUT_DIR)
 export ADDITIONAL_LDFLAGS = -F$(FRAMEWORK_OUTPUT_DIR)
