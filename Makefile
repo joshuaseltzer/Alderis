@@ -1,7 +1,8 @@
 ARCHS = arm64 arm64e
-TARGET = iphone:14.5:12.0
+TARGET = iphone:latest:12.0
 
-FRAMEWORK_OUTPUT_DIR = $(THEOS_OBJ_DIR)/install/Library/Frameworks
+FRAMEWORK_OUTPUT_DIR = $(THEOS_OBJ_DIR)/xcode_derived/install/Library/Frameworks
+ALDERIS_SDK_DIR = $(THEOS_OBJ_DIR)/alderis_sdk_$(THEOS_PACKAGE_BASE_VERSION)
 
 export ADDITIONAL_CFLAGS = -fobjc-arc -Wextra -Wno-unused-parameter -F$(FRAMEWORK_OUTPUT_DIR)
 export ADDITIONAL_LDFLAGS = -F$(FRAMEWORK_OUTPUT_DIR)
